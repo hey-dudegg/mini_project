@@ -8,15 +8,42 @@
 <head th:replace="common/fragments/config :: ConfigFragment">
     <title layout:title-pattern="$LAYOUT_TITLE : $CONTENT_TITLE">공통 타이틀</title>
 </head>
+<!-- Custom CSS -->
+<style>
+    html, body {
+           height: 100%;
+           margin: 0;
+           padding: 0;
+       }
 
-<body>
-<!--Header 영역을 참조합니다.-->
+       .container {
+           display: flex;
+           flex-direction: column;
+           min-height: 100vh; /* Full viewport height */
+       }
+
+       main {
+           flex: 1; /* Take remaining vertical space */
+       }
+
+       footer {
+           background-color: #f5f5f5;
+           text-align: center;
+           padding: 15px; /* Add padding as needed */
+           margin-top: auto; /* Push footer to the bottom */
+       }
+</style>
+<body class="container">
+<!-- Header -->
 <header th:replace="common/fragments/header :: HeaderFragment"></header>
 
-<!--Content 내용 영역을 참조합니다-->
-<th:block layout:fragment="Content"></th:block>
+<!-- Content -->
+<main role="main" class="container-fluid">
+    <th:block layout:fragment="Content"></th:block>
+</main>
 
-<!--Footer 영역을 참조합니다.-->
+<!-- Footer -->
 <footer th:replace="common/fragments/footer :: FooterFragment"></footer>
+
 </body>
 </html>

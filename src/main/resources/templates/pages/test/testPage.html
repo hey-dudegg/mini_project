@@ -8,26 +8,80 @@
 >
 <head>
     <title>테스트 페이지 </title>
-
-    <!-- inline CSS 영역-->
-    <style th:inline="css" type="text/css">
-        body {
-            margin: 30px;
-            border: 1px solid red;
-        }
-    </style>
-
     <!-- inline JS 영역-->
     <script th:inline="javascript" type="text/javascript">
-        $(document).ready(() => {
-            console.log("페이지가 시작됩니다.")
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log("페이지가 시작됩니다.");
         });
     </script>
+    <style>
+        .post {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .post-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .post-meta {
+            font-size: 0.9rem;
+            color: #6c757d;
+        }
+
+        .pagination {
+            justify-content: center;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 
 <body>
-<div>
-    <h1 class="bg-primary">Content 영역입니다.</h1>
+<div class="">
+    <div class="">
+        <h1 class="my-4">간단한 게시판 예제</h1>
+
+        <!-- 게시물 목록 -->
+        <div class="post">
+            <div class="post-title">게시물 제목</div>
+            <div class="post-meta">
+                <span><i class="far fa-comment"></i> 10 댓글</span> |
+                <span>2024-07-05 오후 3:30</span> |
+                <span>글쓴이</span>
+            </div>
+            <p>여기는 게시물 내용이 들어갑니다. Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+        </div>
+
+        <!-- 여러 개의 게시물 추가 -->
+        <!-- 예시로 하나 더 추가 -->
+        <div class="post">
+            <div class="post-title">게시물 제목 2</div>
+            <div class="post-meta">
+                <span><i class="far fa-comment"></i> 5 댓글</span> |
+                <span>2024-07-05 오후 4:00</span> |
+                <span>글쓴이</span>
+            </div>
+            <p>여기는 게시물 내용이 들어갑니다. Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+        </div>
+
+        <!-- 페이지네이션 -->
+        <ul class="pagination">
+            <li class="page-item disabled">
+                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">이전</a>
+            </li>
+            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+                <a class="page-link" href="#">다음</a>
+            </li>
+        </ul>
+    </div>
 </div>
 </body>
 </html>
