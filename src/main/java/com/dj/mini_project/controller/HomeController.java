@@ -1,4 +1,4 @@
-package com.dj.mini_project;
+package com.dj.mini_project.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
